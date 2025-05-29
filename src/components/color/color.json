@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_color_colors",
+  "info": {
+    "displayName": "Color",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Hex": {
+      "type": "string"
+    }
+  }
+}

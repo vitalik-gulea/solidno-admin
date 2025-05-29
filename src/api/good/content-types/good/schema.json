@@ -4,49 +4,13 @@
   "info": {
     "singularName": "good",
     "pluralName": "goods",
-    "displayName": "Good",
+    "displayName": "Goods",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "price": {
-      "type": "biginteger"
-    },
-    "size": {
-      "type": "enumeration",
-      "enum": [
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL"
-      ]
-    },
-    "embroidery": {
-      "type": "boolean"
-    },
-    "isNew": {
-      "type": "boolean"
-    },
-    "description": {
-      "type": "text"
-    },
-    "sizeInfo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "photos": {
       "type": "media",
       "multiple": true,
@@ -58,7 +22,19 @@
         "audios"
       ]
     },
-    "mianPhoto": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "delivery": {
+      "type": "text"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "size_info": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -69,22 +45,15 @@
         "audios"
       ]
     },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "coats",
-        "bomberJackets",
-        "shirts",
-        "tShirts",
-        "jeans",
-        "zipHoodies",
-        "shorts",
-        "pants",
-        "sweaters",
-        "vests",
-        "cardigans",
-        "sets"
-      ]
+    "color": {
+      "type": "component",
+      "repeatable": true,
+      "component": "color.color"
+    },
+    "size": {
+      "type": "component",
+      "repeatable": true,
+      "component": "size.size"
     }
   }
 }

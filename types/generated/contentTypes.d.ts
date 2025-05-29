@@ -373,7 +373,7 @@ export interface ApiGoodGood extends Struct.CollectionTypeSchema {
   collectionName: 'goods';
   info: {
     description: '';
-    displayName: 'Good';
+    displayName: 'Goods';
     pluralName: 'goods';
     singularName: 'good';
   };
@@ -381,40 +381,23 @@ export interface ApiGoodGood extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.Enumeration<
-      [
-        'coats',
-        'bomberJackets',
-        'shirts',
-        'tShirts',
-        'jeans',
-        'zipHoodies',
-        'shorts',
-        'pants',
-        'sweaters',
-        'vests',
-        'cardigans',
-        'sets',
-      ]
-    >;
+    color: Schema.Attribute.Component<'color.color', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    delivery: Schema.Attribute.Text;
     description: Schema.Attribute.Text;
-    embroidery: Schema.Attribute.Boolean;
-    isNew: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::good.good'> &
       Schema.Attribute.Private;
-    mianPhoto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     photos: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
     price: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
-    size: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L', 'XL']>;
-    sizeInfo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    size: Schema.Attribute.Component<'size.size', true>;
+    size_info: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
